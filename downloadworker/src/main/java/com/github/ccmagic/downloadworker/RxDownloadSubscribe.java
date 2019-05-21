@@ -39,6 +39,7 @@ public class RxDownloadSubscribe implements ObservableOnSubscribe<RxEmitterEntit
             if (downloadedLength - totalLength >= -2) {//-2给点幅度空间，防止一点误差导致逻辑出错
                 rxEmitterEntity.setCode(RxEmitterEntity.COMPLETE);
                 rxEmitterEntity.setPath(downloadBuilder.getBuildInfo().getLocalInfo().getPath());
+                rxEmitterEntity.setMessage("下载成功2");
                 emitter.onNext(rxEmitterEntity);
                 emitter.onComplete();
                 return;

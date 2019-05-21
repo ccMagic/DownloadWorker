@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--下载对话框-->
+    <LinearLayout
+        android:id="@+id/downLoadLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cc_magic_download_manager_dialog_bg"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:progressDrawable="@drawable/cc_magic_download_shape_progress" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/progressTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textColor="#404c60"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/sizeProgressTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="-/-M"
+                android:textColor="#404c60"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:background="#c3c3c3" />-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/cancelTv"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/cc_magic_download_manager_dialog_btn_left"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="20dp"-->
+                <!--android:text="@string/cancel"-->
+                <!--android:textColor="#404c60"-->
+                <!--android:textSize="16sp" />-->
+
+            <!--<View-->
+                <!--android:id="@+id/mid_line"-->
+                <!--android:layout_width="0.5dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="#c3c3c3" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/ensureTv"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/cc_magic_download_manager_dialog_btn_right"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="20dp"-->
+                <!--android:text="@string/sure"-->
+                <!--android:textColor="#404c60"-->
+                <!--android:textSize="16sp" />-->
+        <!--</LinearLayout>-->
+    </LinearLayout>
+
+    <!--非wifi环境提示-->
+    <LinearLayout
+        android:id="@+id/wifiTipsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cc_magic_download_manager_dialog_bg"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="50dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="当前非WIFI网络，是否确定更新？"
+            android:textColor="#404c60"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#c3c3c3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/wifiCancelTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cc_magic_download_manager_dialog_btn_left"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="取消"
+                android:textColor="#404c60"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#c3c3c3" />
+
+            <TextView
+                android:id="@+id/wifiEnsureTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cc_magic_download_manager_dialog_btn_right"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="确定"
+                android:textColor="#404c60"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

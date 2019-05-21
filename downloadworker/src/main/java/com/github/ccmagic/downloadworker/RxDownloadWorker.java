@@ -16,9 +16,9 @@ import io.reactivex.schedulers.Schedulers;
 class RxDownloadWorker {
     private static final String TAG = "RxDownloadWorker";
 
-    static Disposable start(boolean isGetLength,DownloadBuilder downloadBuilder) {
+    static Disposable start(boolean isGetLength, DownloadBuilder downloadBuilder) {
         DownloadListener downloadListener = downloadBuilder.getBuildInfo().getDownloadListener();
-        return Observable.create(new RxDownloadSubscribe(isGetLength,downloadBuilder))
+        return Observable.create(new RxDownloadSubscribe(isGetLength, downloadBuilder))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(rxEmitterEntity -> {
@@ -41,6 +41,7 @@ class RxDownloadWorker {
                                 downloadListener.cancel();
                                 break;
                             case RxEmitterEntity.COMPLETE://完成
+                                Log.e("Rx message", rxEmitterEntity.getMessage());
                                 downloadListener.complete(rxEmitterEntity.getPath());
                                 break;
                             case RxEmitterEntity.FAIL://失败
